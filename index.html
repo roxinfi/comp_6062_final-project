@@ -1,100 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMP-6062 Final Practical Project</title>
-
+    <title>COMP 6062 Final Project</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <div id="app" class="container">
+<body class="body container" id="app">
+    <header class="header row">
+        <h1 class="h1">{{ myname }} {{ myid }}</h1>
+    </header>
 
-        <!-- Header -->
-        <header class="row my-4">
-            <div class="col-md-12 text-center">
-                <h1>Vraj Patel - 123456789</h1>
-                <p>COMP-6062 Final Practical Project</p>
+    <main class="main">
+        <!-- Welcome Section -->
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://i.pinimg.com/originals/a6/f6/91/a6f691f629b882450d4dec6866322f9c.gif" alt="dancing_gif">
             </div>
-        </header>
-
-        <!-- Main Content -->
-        <main>
-
-            <!-- Random User Profile -->
-            <div class="row mb-5">
-                <div class="col-md-12">
-                    <h2>Random User Profile</h2>
-                </div>
-                <div class="col-md-4">
-                    <img :src="user.picture" alt="User Avatar" class="img-fluid rounded">
-                </div>
-                <div class="col-md-8">
-                    <p>Name: {{ user.firstName }} {{ user.lastName }}</p>
-                    <p>Age: {{ user.age }}</p>
-                    <button class="btn btn-primary" @click="getRandomUser">Next User Profile</button>
-                </div>
+            <div class="col-md-4">
+                <h2 class="h2">Welcome to My Final Project</h2>
+                <p class="p1">Please explore the features and functionalities implemented in this project.</p>
+                <p class="p1">Have fun exploring the user data!</p>
             </div>
+            <div class="col-md-4">
+                <img src="https://i.pinimg.com/originals/a6/f6/91/a6f691f629b882450d4dec6866322f9c.gif" alt="dancing image">
+            </div>
+        </div>
 
-            <!-- Weather Module -->
-            <div class="row mb-5">
-                <div class="col-md-12">
-                    <h2>Weather</h2>
-                </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="City" v-model="weather.city">
-                </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Province" v-model="weather.province">
-                </div>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Country" v-model="weather.country">
-                </div>
-                <div class="col-md-12 mt-3">
-                    <button class="btn btn-success" @click="getWeatherData">Get Weather Data</button>
-                </div>
-                <div class="col-md-12 mt-3">
-                    <p>Temperature: {{ weatherData.temperature }}</p>
-                    <p>Wind: {{ weatherData.wind }}</p>
-                    <p>Description: {{ weatherData.description }}</p>
-                </div>
+        <!-- Modules Section -->
+        <div class="row">
+            <!-- Random User -->
+            <div class="col-md-4 getRandomUser" v-if="user.user_profile">
+                <h2 class="h2">Get Random User</h2>
+                <p class="p1">Click the button below to fetch a random user profile.</p>
+                <p class="p2">Name: {{ user.user_profile.first_name }} {{ user.user_profile.last_name }}</p>
+                <p class="p2">Email: {{ user.user_profile.email }}</p>
+                <p class="p2">Age: {{ user.user_profile.age }}</p>
+                <img :src="user.user_profile.avatar_url" alt="randomavatar">
+                <p class="p3"><button @click="getRandomUser()" class="button">Fetch Another User</button></p>
             </div>
 
-            <!-- Dictionary Module -->
-            <div class="row mb-5">
-                <div class="col-md-12">
-                    <h2>Dictionary</h2>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Enter a word" v-model="dictionary.word">
-                </div>
-                <div class="col-md-6">
-                    <button class="btn btn-warning" @click="getDefinition">Define Word</button>
-                </div>
-                <div class="col-md-12 mt-3">
-                    <p>Phonetic: {{ dictionaryData.phonetic }}</p>
-                    <p>Definition: {{ dictionaryData.definition }}</p>
-                </div>
+            <!-- Weather -->
+            <div class="col-md-4 getWeatherData" v-if="weatherData.weather_data">
+                <h2 class="h2">Get Weather Data</h2>
+                <p class="p1">Enter the city, province, and country to fetch the weather data.</p>
+                <p><input type="text" v-model="weather.city" placeholder="Enter city name"></p>
+                <p><input type="text" v-model="weather.province" placeholder="Enter province name"></p>
+                <p><input type="text" v-model="weather.country" placeholder="Enter country name"></p>
+                <p class="p2">Temperature: {{ weatherData.weather_data.temperature }} °C</p>
+                <p class="p2">Wind: {{ weatherData.weather_data.wind_speed }}</p>
+                <p class="p2">Weather Description: {{ weatherData.weather_data.weather_description }}</p>
+                <p class="p2">Population: {{ weatherData.weather_data.location.population }}</p>
+                <p><button @click="getWeatherData()" class="button">Fetch Weather Data</button></p>
             </div>
 
-        </main>
-
-        <!-- Footer -->
-        <footer class="row mt-4">
-            <div class="col-md-12 text-center">
-                <p>&copy; 2025 Vraj Patel | COMP-6062</p>
+            <!-- Dictionary -->
+            <div class="col-md-4 getdefinition" v-if="dictionary">
+                <h2 class="h2">Get Definition</h2>
+                <p class="p1">Enter a word to fetch its definition.</p>
+                <p><input type="text" v-model="meaningofword" placeholder="Enter word"></p>
+                <p class="p2">Phonetic: {{ dictionary.phonetic }}</p>
+                <p class="p2">Definition: {{ dictionary.definition }}</p>
+                <p><button @click="getDefinition()" class="button">Fetch Definition</button></p>
             </div>
-        </footer>
+        </div>
+    </main>
 
-    </div>
-
-    <!-- Vue.js CDN -->
+    <!-- VueJS -->
     <script src="https://unpkg.com/vue@3.4.31/dist/vue.global.js"></script>
-    <!-- App JS -->
+    <!-- Your JS -->
     <script src="scripts/app.js"></script>
 </body>
 </html>

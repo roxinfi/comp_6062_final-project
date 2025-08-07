@@ -1,46 +1,99 @@
-/* General Page Styling */
-body {
-    background-color: #f8f9fa; /* Bootstrap light background tone */
+.body {
+    background-color: #f4f6f9;
     font-family: Arial, sans-serif;
+    padding-bottom: 40px;
 }
 
-/* Header Styling */
-header h1 {
-    font-size: 2rem;
-    font-weight: bold;
+.header {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
-header p {
-    font-size: 1.2rem;
-    color: #6c757d;
-}
-
-/* Section Spacing */
-section {
-    background: white;
+.main {
+    background-color: darkorchid;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Image Styling */
+.button {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+.h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.h2 {
+    color: #343a40;
+    background-color: #e2e6ea;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.p1 {
+    color: palegreen;
+    font-size: 13px;
+    text-align: center;
+}
+
+.p2{
+    color: lightsalmon;
+    font-size: 13px;
+}
+
+.p3 {
+    padding: 20px;
+}
+
 img {
-    max-width: 100%;
-    border: 2px solid #dee2e6;
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
 }
 
-/* Media Query - from lecture notes (Week 3) */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    section {
+    .header
+    {
+        text-align: center;
         padding: 15px;
     }
 
-    button {
-        width: 100%;
-        margin-top: 10px;
+     .main {
+        padding: 15px;
+    }
+    
+    .h1 {
+        font-size: 22px;
+    }
+    
+    .h2 {
+        font-size: 18px;
+    }
+    
+    .p1{
+        font-size: 16px;
+        color: darkslategray;
+    } .p2
+    {
+        font-size: 14px;
+        color: darkslategray;
+    }
+     .p3 {
+        font-size: 12px;
+        color: black;
+    }
+    
+    img {
+        max-width: 15%;
     }
 }
