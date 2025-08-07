@@ -11,9 +11,9 @@ const app = Vue.createApp({
 
             // Weather Module
             weather: {
-                city: 'Cambridge', // Default values for initial load
-                province: 'Ontario',
-                country: 'Canada'
+                city: 'London', // Default city for initial load
+                province: 'Ontario', // Default province for initial load
+                country: 'Canada' // Default country for initial load
             },
             weatherData: {},
 
