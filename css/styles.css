@@ -1,0 +1,46 @@
+/* General Page Styling */
+body {
+    background-color: #f8f9fa; /* Bootstrap light background tone */
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styling */
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+/* Section Spacing */
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    border: 2px solid #dee2e6;
+}
+
+/* Media Query - from lecture notes (Week 3) */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
