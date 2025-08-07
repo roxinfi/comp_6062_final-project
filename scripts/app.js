@@ -1,13 +1,13 @@
-const errormessage = 'Error in fetching data from API: ';
+const errormessage = 'Error in fetching data from the provided link ';
 
 const app = Vue.createApp({
     data() {
         return {
 
             myname: 'Vraj Patel',
-            myid: '12434376',
+            myid: '1243437',
             // Random User Module
-            user: {},
+            user: [],
 
             // Weather Module
             weather: {
@@ -15,41 +15,44 @@ const app = Vue.createApp({
                 province: 'Ontario', // Default province for initial load
                 country: 'Canada' // Default country for initial load
             },
-            weatherData: {},
+            weatherData: [],
 
             // Dictionary Module
-            dictionary: {},
+            dictionary: [],
             meaningofword: '' // Default word for initial load
         }
     },
 
     methods: {
         // Fetch Random User
-        getRandomUser() {
+        createRandomUser() {
             const url1 = `https://comp6062.liamstewart.ca/random-user-data`;
             fetch(url1)
                 .then(response => {return response.json();})
                 .then(data => {
+                    console.log(data);
                     this.user = data;
                 })
                 .catch(error => console.error(errormessage, error));
         },
 
-        getWeatherData() {
+        provideWeatherData() {
             const url2 = `https://comp6062.liamstewart.ca/weather-data?city=${this.weather.city}&province=${this.weather.province}&country=${this.weather.country}`;
             fetch(url2)
                 .then(response => {return response.json();})
                 .then(data => {
+                    console.log(data);
                     this.weatherData = data;
                 })
                 .catch(error => console.error(errormessage, error));
         },
 
-        getDefinition() {
+        getDefinitionfromdictionary() {
             const url3 = `https://comp6062.liamstewart.ca/api/define?word=${this.meaningofword}`;
             fetch(url3)
                 .then(response => {return response.json();})
                 .then(data => {
+                    console.log(data);
                     this.dictionary = data;
                 })
                 .catch(error => console.error(errormessage, error));
@@ -58,9 +61,9 @@ const app = Vue.createApp({
 
     created() {
         // Auto-load on page load
-        this.getRandomUser();
-        this.getWeatherData();
-        this.getDefinition();
+        this.createRandomUser();
+        this.provideWeatherData();
+        this.getDefinitionfromdictionary();
     }
 });
 

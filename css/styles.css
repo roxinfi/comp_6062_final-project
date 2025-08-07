@@ -53,6 +53,15 @@ img {
     margin: auto;
 }
 
+.footerbackground {
+    background-color: darkolivegreen;
+    font-size: 14px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: whitesmoke;
+    text-align: left;
+    padding: 10px;
+}
+
 @media (max-width: 768px) {
     .header
     {
@@ -88,5 +97,10 @@ img {
     
     img {
         max-width: 15%;
+    }
+
+    .fotter {
+        text-align: center;
+        padding: 10px;
     }
 }
