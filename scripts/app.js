@@ -1,9 +1,6 @@
-const errormessage = 'Error in fetching data from the provided link ';
-
 const app = Vue.createApp({
     data() {
         return {
-
             myname: 'Vraj Patel',
             myid: '1243437',
             // Random User Module
@@ -33,7 +30,7 @@ const app = Vue.createApp({
                     console.log(data);
                     this.user = data;
                 })
-                .catch(error => console.error(errormessage, error));
+                .catch(error => console.error(error));
         },
 
         provideWeatherData() {
@@ -44,7 +41,7 @@ const app = Vue.createApp({
                     console.log(data);
                     this.weatherData = data;
                 })
-                .catch(error => console.error(errormessage, error));
+                .catch(error => console.error(error));
         },
 
         getDefinitionfromdictionary() {
@@ -55,7 +52,7 @@ const app = Vue.createApp({
                     console.log(data);
                     this.dictionary = data;
                 })
-                .catch(error => console.error(errormessage, error));
+                .catch(error => console.error(error));
         }
     },
 
