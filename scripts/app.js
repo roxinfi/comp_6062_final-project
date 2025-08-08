@@ -1,10 +1,12 @@
 const app = Vue.createApp({
     data() {
         return {
+            // User Information
             myname: 'Vraj Patel',
             myid: '1243437',
+
             // Random User Module
-            user: [],
+            user: {},
 
             // Weather Module
             weather: {
@@ -12,10 +14,10 @@ const app = Vue.createApp({
                 province: 'Ontario', // Default province for initial load
                 country: 'Canada' // Default country for initial load
             },
-            weatherData: [],
+            weatherData: {},
 
             // Dictionary Module
-            dictionary: [],
+            dictionary: {},
             meaningofword: '' // Default word for initial load
         }
     },

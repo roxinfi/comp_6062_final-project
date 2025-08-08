@@ -17,29 +17,29 @@
 
         <main class="main"> <!-- Main content area -->
             <!-- Welcome Section -->
-            <div class="row"> <!-- Row for welcome section -->
+            <div class="row"> <!-- Row for welcome section --><!-- First Row -->
 
                 <div class="col-md-4"> 
-                    <img src="https://i.pinimg.com/originals/a6/f6/91/a6f691f629b882450d4dec6866322f9c.gif" alt="dancing_gif">
+                    <img class="cheersImage" src="https://media.tenor.com/LCpGmX5A6NIAAAAM/cheers-toast.gif" alt="cheers toast by Leonardo DiCaprio gif">
                 </div>
 
                 <div class="col-md-4">
                     <h2 class="h2">Welcome to My Final Project</h2>
                     <p class="p1">Please explore the features and functionalities implemented in this project.</p>
-                    <p class="p1">Have fun exploring the user data!</p>
+                    <p class="p1">Have fun exploring the website!</p>
                 </div>
 
                 <div class="col-md-4">
-                    <img src="https://i.pinimg.com/originals/a6/f6/91/a6f691f629b882450d4dec6866322f9c.gif" alt="dancing image">
+                    <img class="cheersImage" src="https://media.tenor.com/LCpGmX5A6NIAAAAM/cheers-toast.gif" alt="cheers toast by Leonardo DiCaprio gif">
                 </div>
 
             </div>
 
             <!-- User Profile Section -->
-            <div class="row"> <!-- Row for user profile section -->
+            <div class="row"> <!-- Row for user profile section --> <!-- Second Row -->
                 <!-- Random User Generator Section -->
 
-                <div class="col-md-4 createRandomUser" v-if="user.user_profile">
+                <div class="col-md-4" v-if="user.user_profile">
 
                     <h2 class="h2">Get Random User</h2>
                     <p class="p1">Click the button below to generate a random user profile.</p>
@@ -52,27 +52,28 @@
                 </div>
 
                 <!-- Weather Provider Section -->
-                <div class="col-md-4 provideWeatherData" v-if="weatherData.weather_data"> <!-- Weather data section -->
+                <div class="col-md-4" v-if="weatherData.weather_data"> <!-- Weather data section -->
 
                     <h2 class="h2">Get Weather Data of the following location</h2>
                     <p class="p1">Enter the city, province, and country to fetch the weather data.</p>
-                    <p><input type="text" v-model="weather.city" placeholder="Enter city name"></p>
-                    <p><input type="text" v-model="weather.province" placeholder="Enter province name"></p>
-                    <p><input type="text" v-model="weather.country" placeholder="Enter country name"></p>
+                    <p class="p2"><input type="text" v-model="weather.city" placeholder="Enter city name"></p>
+                    <p class="p2"><input type="text" v-model="weather.province" placeholder="Enter province name"></p>
+                    <p class="p2"><input type="text" v-model="weather.country" placeholder="Enter country name"></p>
                     <p class="p2">Temperature: {{ weatherData.weather_data.temperature }} °C</p>
                     <p class="p2">Wind: {{ weatherData.weather_data.wind_speed }}</p>
                     <p class="p2">Weather Description: {{ weatherData.weather_data.weather_description }}</p>
                     <p class="p2">Population: {{ weatherData.weather_data.location.population }}</p>
+                    <p class="p2">Polar Axis: {{ weatherData.weather_data.location.latitude }} , {{ weatherData.weather_data.location.longitude }}</p>
                     <p><button @click="provideWeatherData()" class="button">Get Weather Data</button></p>
 
                 </div>
 
                 <!-- Fetch Meaning from Dictionary -->
-                <div class="col-md-4 getdefinitionfromdictionary" v-if="dictionary">
+                <div class="col-md-4" v-if="dictionary">
 
                     <h2 class="h2">Get Definition</h2>
                     <p class="p1">Enter a word to know its phonetic and definition.</p>
-                    <p><input type="text" v-model="meaningofword" placeholder="Enter word"></p>
+                    <p class="p2"><input type="text" v-model="meaningofword" placeholder="Enter word"></p>
                     <p class="p2">Phonetic: {{ dictionary.phonetic }}</p>
                     <p class="p2">Definition: {{ dictionary.definition }}</p>
                     <p><button @click="getDefinitionfromdictionary()" class="button">Define Word</button></p>
@@ -84,8 +85,8 @@
         </main>
 
         <footer class="footerbackground">
-            <p>&copy; 2025 Vraj Patel</p>
-            <p>COMP 6062 Final Project</p>
+            <p class="p1">&copy; 2025 Vraj Patel</p>
+            <p class="p1">COMP 6062 Final Project</p>
         </footer>
 
         <!-- VueJS -->
