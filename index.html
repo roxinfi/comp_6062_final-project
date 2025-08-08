@@ -59,7 +59,7 @@
                     <p class="p2"><input type="text" v-model="weather.city" placeholder="Enter city name"></p>
                     <p class="p2"><input type="text" v-model="weather.province" placeholder="Enter province name"></p>
                     <p class="p2"><input type="text" v-model="weather.country" placeholder="Enter country name"></p>
-                    <p class="p2">Temperature: {{ weatherData.weather_data.temperature }} °C</p>
+                    <p class="p2">Temperature: {{ weatherData.weather_data.temperature }} </p>
                     <p class="p2">Wind: {{ weatherData.weather_data.wind_speed }}</p>
                     <p class="p2">Weather Description: {{ weatherData.weather_data.weather_description }}</p>
                     <p class="p2">Population: {{ weatherData.weather_data.location.population }}</p>
@@ -69,7 +69,7 @@
                 </div>
 
                 <!-- Fetch Meaning from Dictionary -->
-                <div class="col-md-4" v-if="dictionary">
+                <div class="col-md-4" v-if="dictionary"><!--if dictionary exists-->
 
                     <h2 class="h2">Get Definition</h2>
                     <p class="p1">Enter a word to know its phonetic and definition.</p>

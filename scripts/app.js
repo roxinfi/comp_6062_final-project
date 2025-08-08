@@ -32,7 +32,7 @@ const app = Vue.createApp({
                     console.log(data);
                     this.user = data;
                 })
-                .catch(error => console.error(error));
+                .catch(error => console.error(error)); // dont know why it is throwing an error
         },
 
         provideWeatherData() {
@@ -43,7 +43,7 @@ const app = Vue.createApp({
                     console.log(data);
                     this.weatherData = data;
                 })
-                .catch(error => console.error(error));
+                .catch(error => console.error(error)); // dont know why it is throwing an error
         },
 
         getDefinitionfromdictionary() {
@@ -54,7 +54,7 @@ const app = Vue.createApp({
                     console.log(data);
                     this.dictionary = data;
                 })
-                .catch(error => console.error(error));
+                .catch(error => console.error(error)); // dont know why it is throwing an error
         }
     },
 
